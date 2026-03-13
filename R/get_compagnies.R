@@ -30,12 +30,6 @@ get_companies <- function() {
 #' @export
 #'
 #' @examples
-get < - function(){
 
-  con <- connect_db()
-  DBI:: dbGetQuery(con, "SELECT * From adem.companies limit 100;")
-  DBI::dbDisconnect(con)
-
-}
 
 
