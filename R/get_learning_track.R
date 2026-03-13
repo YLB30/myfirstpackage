@@ -49,20 +49,20 @@ get_learning_tracks <- function(con, skill_id = NULL) {
 #' @export
 #'
 #' @examples
-get_learning_tracks <- function(con, skill_id = NULL) {
-  stopifnot(inherits(con, "DBIConnection"))
-
-  sql <- glue_sql("
-    SELECT DISTINCT
-  lt.track_id,
-  lt.title,
-  lt.description,
-  lt.url
-FROM adem_learning_tracks lt
-LEFT JOIN adem_skills s ON lt.track_id = s.skill_id  -- ou table de liaison si existe
-WHERE ({skill_id} IS NULL OR s.skill_id = {skill_id})
-ORDER BY lt.title;
-  ", skill_id = skill_id, .con = con)
-
-  DBI::dbGetQuery(con, sql)
-}
+# get_learning_tracks <- function(con, skill_id = NULL) {
+#   stopifnot(inherits(con, "DBIConnection"))
+#
+#   sql <- glue_sql("
+#     SELECT DISTINCT
+#   lt.track_id,
+#   lt.title,
+#   lt.description,
+#   lt.url
+# FROM adem_learning_tracks lt
+# LEFT JOIN adem_skills s ON lt.track_id = s.skill_id  -- ou table de liaison si existe
+# WHERE ({skill_id} IS NULL OR s.skill_id = {skill_id})
+# ORDER BY lt.title;
+#   ", skill_id = skill_id, .con = con)
+#
+#   DBI::dbGetQuery(con, sql)
+# }

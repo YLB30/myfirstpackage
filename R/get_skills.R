@@ -35,11 +35,11 @@ get_skill <- function(){
 #' @export
 #'
 #' @examples
-get_skill <- function(){
-  con <- connect_db()
-  DBI:: dbGetQuery(con, "SELECT * From adem.skills limit 100;")
-  DBI::dbDisconnect(con)
-}
+# get_skill <- function(){
+#   con <- connect_db()
+#   DBI:: dbGetQuery(con, "SELECT * From adem.skills limit 100;")
+#   DBI::dbDisconnect(con)
+# }
 
 
 

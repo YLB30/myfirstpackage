@@ -50,25 +50,25 @@ log_search <- function(con, user_id, query) {
 #' @export
 #'
 #' @examples
-log_search <- function(con, user_id, query) {
-  stopifnot(
-    inherits(con, "DBIConnection"),
-    is.numeric(user_id), length(user_id) == 1,
-    is.character(query), length(query) == 1
-  )
-
-  sql <- glue_sql("
-    INSERT INTO student_yves.search_logs (user_id, query, query_time)
-    VALUES ({user_id}, {query}, NOW())
-    ON CONFLICT DO NOTHING
-    RETURNING TRUE;
-  ", .con = con)
-
-  tryCatch({
-    result <- DBI::dbGetQuery(con, sql)
-    return(nrow(result) > 0)  # TRUE si INSERT a réussi
-  }, error = function(e) {
-    message("Log error: ", e$message)
-    return(FALSE)
-  })
-}
+# log_search <- function(con, user_id, query) {
+#   stopifnot(
+#     inherits(con, "DBIConnection"),
+#     is.numeric(user_id), length(user_id) == 1,
+#     is.character(query), length(query) == 1
+#   )
+#
+#   sql <- glue_sql("
+#     INSERT INTO student_yves.search_logs (user_id, query, query_time)
+#     VALUES ({user_id}, {query}, NOW())
+#     ON CONFLICT DO NOTHING
+#     RETURNING TRUE;
+#   ", .con = con)
+#
+#   tryCatch({
+#     result <- DBI::dbGetQuery(con, sql)
+#     return(nrow(result) > 0)  # TRUE si INSERT a réussi
+#   }, error = function(e) {
+#     message("Log error: ", e$message)
+#     return(FALSE)
+#   })
+# }
