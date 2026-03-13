@@ -1,9 +1,9 @@
 Package: Luxjob
-Title: What the Package Does (One Line, Title Case)
+Title: What the Package Does (First Package, Luxjob)
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Yves Lionel", "BOMBOGO", , "yves@yahoo.fr, role = c("aut", "cre"))
+Description: What the package does (This is my first pacakge, it a list of function that make some specific operation).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
