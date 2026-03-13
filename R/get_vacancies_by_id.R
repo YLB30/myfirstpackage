@@ -1,4 +1,4 @@
-#' Title
+#'
 #'#' Get vacancies requiring a specific skill
 #'
 #' Retrieves all job vacancies that require a given skill from the ADEM database.
