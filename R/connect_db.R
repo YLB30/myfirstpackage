@@ -42,5 +42,6 @@ connect_db <- function() {
     port = 5432
   )
   return(con)
+  DBI::dbDisconnect(con)
 }
 

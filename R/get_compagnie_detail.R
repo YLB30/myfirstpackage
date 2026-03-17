@@ -35,7 +35,7 @@
 #' }
 #'
 #' @export
-
+# @importFrom DBI dbGetQuery dbDisconnect
 #' @returns
 #' @export
 #'
