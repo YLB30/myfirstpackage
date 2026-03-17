@@ -1,5 +1,0 @@
-DB_HOST = 'dlh.cerk0ko48rck.us-east-1.rds.amazonaws.com'
-DB_NAME ='postgres'
-DB_USER ='yves'
-DB_PASSWORD ='SCjbQLoKqoeg'
-DB_SCHEMA ='adem'
